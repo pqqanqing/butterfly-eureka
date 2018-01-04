@@ -1,0 +1,86 @@
+---
+spring:
+  application:
+    name: butterfly-eureka-server
+  profiles: dev1
+server:
+  port: 8761
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:8762/eureka/
+---
+spring:
+  application:
+    name: butterfly-eureka-server
+  profiles: dev2
+server:
+  port: 8762
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:8761/eureka/
+
+
+---
+spring:
+  application:
+    name: butterfly-eureka-server
+  profiles: test1
+server:
+  port: 18761
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:18762/eureka/
+---
+spring:
+  application:
+    name: butterfly-eureka-server
+  profiles: test2
+server:
+  port: 18762
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:18761/eureka/
+
+
+---
+spring:
+  application:
+    name: butterfly-eureka-server
+  profiles: prod1
+server:
+  port: 28761
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:28762/eureka/
+---
+spring:
+  application:
+    name: butterfly-eureka-server
+  profiles: prod2
+server:
+  port: 28762
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:28761/eureka/
+
+
+
+
